@@ -1,0 +1,23 @@
+{
+  "name": "Coach Academy",
+  "short_name": "C M",
+  "description": "This Is For Commercial Use",
+  "display": "fullscreen",
+  "background_color": "#36ff00",
+  "theme_color": "#f00",
+  "icons": [
+    {
+      "src": "./img/logo.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./img/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "."
+}
