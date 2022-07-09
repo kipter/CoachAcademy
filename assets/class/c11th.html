@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class 11th Answers</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table id="dataTable">
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+      </tr>
+    </table>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+      import {
+        getDatabase,
+        ref,
+        get,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyDmGEcSP284bYy9YClVnCeAcxIMAQcKKPY",
+        authDomain: "mywebsitedatabase-315b2.firebaseapp.com",
+        projectId: "mywebsitedatabase-315b2",
+        storageBucket: "mywebsitedatabase-315b2.appspot.com",
+        messagingSenderId: "561055572518",
+        appId: "1:561055572518:web:99bcdba11820bea78f3ce7",
+        measurementId: "G-7L2CFKE6WS",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+
+      function getDataFromDatabase() {
+        var dataTable = document.getElementById("dataTable");
+
+        const db = getDatabase();
+        const dbRef = ref(db, "class11thNotesLinks/");
+
+        onValue(dbRef, (snapshot) => {
+          snapshot.forEach((childSnapshot) => {
+            const childKey = childSnapshot.key;
+            const childData = childSnapshot.val();
+
+            var tr = document.createElement("tr");
+
+            tr.innerHTML =
+              "<tr><td>" +
+              childData.FileName +
+              "</td></tr>" +
+              "<tr><td><a href=" +
+              childData.FileURL +
+              ">Download From Here</a></td></tr>";
+
+            dataTable.appendChild(tr);
+          });
+        });
+      }
+
+      getDataFromDatabase();
+    </script>
+  </body>
+</html>
