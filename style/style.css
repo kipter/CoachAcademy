@@ -11,6 +11,7 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
+  scroll-behavior: smooth;
 }
 
 .top-area {
@@ -23,33 +24,39 @@ body {
   flex-direction: column;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
-}
-
-.down-area {
-  width: 100%;
+    
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  .down-area {
+    width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  padding: 10px 50px 20px 50px;
+  /* padding: 10px 50px 20px 50px; */
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  "Lucida Sans", Arial, sans-serif;
 }
 
 .down-area > div {
-  width: 30%;
-  height: 450px;
-  margin-left: 20px;
-  box-shadow: 0px 0px 5px 0.3px rgba(0, 0, 0, 0.4);
-  padding: 15px;
-  border-radius: 20px;
+  width: 100%;
+  position: relative;
+  height: 20%;
+  /* margin-left: 20px; */
+  /* box-shadow: 0px 0px 5px 0.3px rgba(0, 0, 0, 0.4); */
+  /* padding: 15px; */
+  background-color: #5f8125;
+  border: 1px solid white;
 }
 
-.banner{
-    border-radius: 20px;
-    margin-bottom: 10px;
+.banner {
+  width: 40px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 20px;
 }
 
 .down-area > div > h2 {
@@ -57,128 +64,183 @@ body {
   justify-content: center;
 }
 
-@media screen and (max-width: 871px) {
-  .down-area {
-    padding: 10px 10px 20px 10px;
-  }
+.another-page {
+  width: 100%;
+  height: 100vh;
 }
 
-@media screen and (max-width: 782px) {
-  .down-area > div {
-    width: 25%;
-    margin-left: 40px;
-    height: 350px;
-  }
-
-  .banner {
-    width: 130px;
-  }
+.another-page > .top-banner {
+  width: 100%;
+  height: 400px;
+  background-color: black;
+  display: flex;
 }
 
-.another-page{
-    width: 100%;
-    height: 100vh;
+#g-think {
+  width: 500px;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 30px;
+  border-radius: 20px;
 }
 
-.another-page > .top-banner{
-    width: 100%;
-    height: 400px;
-    background-color: black;
-    display: flex;
+.top-banner > h1 {
+  margin-left: 20px;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  margin-top: 230px;
 }
 
-#g-think{
-    width: 500px;
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 30px;
-    border-radius: 20px;
+.answer-why {
+  width: 100%;
+  height: auto;
+  margin-top: 140px;
+  padding-bottom: 20px;
+  padding-left: 140px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-transform: capitalize;
+}
+.pan-id{
+  text-align: center;
+  line-height: 140px;
 }
 
-.top-banner > h1{
-    margin-left: 20px;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-top: 230px;
-  }
-  
-  .answer-why{
-    width: 100%;
-    height: auto;
-    margin-top: 140px;
-    padding-bottom: 20px;
-    padding-left: 140px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-transform: capitalize;
-  }
-
+.pan-id > a{
+  color: white;
+  text-decoration: none;
+}
 @media screen and (max-width: 683px) {
-  .down-area {
-    flex-direction: column;
-    height: 170vh;
-    padding: 0;
-    padding-bottom: 20px;
-  }
-
-  .down-area > div {
-    width: 60%;
-    margin-top: 20px;
-    margin-left: 10px;
-  }
-  .top-area > h1, h2{
+  .top-area > h1,
+  h2 {
     text-align: center;
   }
-  
-  .answer-why{
+
+  .answer-why {
     padding-left: 0px;
     text-align: left;
   }
 
-  #g-think{
+  #g-think {
     width: 300px;
     height: 300px;
     margin-top: 140px;
   }
 }
 
-
 @media screen and (max-width: 543px) {
-  #g-think{
+  #g-think {
     width: 200px;
     height: 200px;
     margin-top: 240px;
   }
-  .answer-why{
+  .answer-why {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .top-banner > h1{
+  .top-banner > h1 {
     margin-top: 290px;
     font-size: 24px;
   }
 }
 
 @media screen and (max-width: 360px) {
-  .another-page{
+  .another-page {
     height: 100vh;
   }
-  .another-page > .top-banner{
+  .another-page > .top-banner {
     height: 210px;
   }
-  #g-think{
+  #g-think {
     width: 150px;
     height: 150px;
     margin-top: 90px;
     margin-left: 10px;
   }
-  .answer-why{
+  .answer-why {
     padding-left: 10px;
     padding-right: 10px;
     margin-top: 100px;
     font-size: 15px;
   }
-  .top-banner > h1{
+  .top-banner > h1 {
     margin-top: 140px;
     font-size: 20px;
   }
+}
+
+.bot{
+  width: 60px;
+  height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: fixed;
+  border: 1px solid white;
+  bottom: 20px;
+  right: 30px;
+}
+
+.bot > #bot-face{
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+}
+
+.message-box{
+  width: 270px;
+  display: none;
+  height: 300px;
+  background-color: white;
+  position: fixed;
+  bottom: 75px;
+  border-radius: 10px;
+  right: 30px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4) ;
+}
+
+.message-box > .appendBody{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 5px;
+}
+
+.appendBody > .message{
+  width: 80%;
+  height: auto;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+  font-family: sans-serif;
+  background-color: #222;
+  margin-top: 10px;
+}
+
+.right{
+  margin-left: 50px;
+}
+
+.btn-div-s{
+  width: 100%;
+  padding: 7px;
+  height: auto;
+  display: flex;
+}
+
+.btn-s{
+  width: 50%;
+  height: 30px;
+  border: 1px solid white;
+  outline: none;
+  background: coral;
+}
+
+.btn-s > a{
+  color: black;
+  text-decoration: none;
 }
