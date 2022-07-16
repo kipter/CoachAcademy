@@ -27,6 +27,14 @@ body {
     
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.4);
   }
+
+.top-area > h1 {
+  color: red;
+}
+
+.top-area > h2 {
+  color: turquoise;
+}
   
   .down-area {
     width: 100%;
